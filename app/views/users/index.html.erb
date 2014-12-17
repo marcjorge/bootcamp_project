@@ -1,0 +1,37 @@
+<%if @current_user.admin %>
+<head>
+	<title>Users</title>
+</head>
+<div class="users" align="center">
+	<h1> Users </h1>
+	<table>
+		<thead>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Email</th>
+			<th>Position</th>
+			<th></th>
+			<th></th>
+		</thead>
+		<tbody>
+			<% @users.each do |user| %>
+			<tr>
+				<td><%= link_to user.first_name, user_path(user) %></td>
+				<td><%= user.last_name %></td>
+				<td><%= user.email %></td>
+				<td>
+					<% if user.admin %>
+						Manager
+					<% else %>
+						User
+					<%end%></td>
+				<td><%= link_to 'EDIT', edit_user_path(user) %> </td>
+				<td><%= link_to 'DELETE', user, method: :delete, data: { confirm: 'Are you sure?' }%> </td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+<% else %>
+<center><p>You don't Have permission</p></center>
+<% end %>

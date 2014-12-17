@@ -1,0 +1,17 @@
+<div class="Sign_Form">
+	<h1>New Task</h1>
+	<hr>
+	  <%= form_for([@project, @task]) do |f| %>
+	  	<p> Task:</br> <%= f.text_field :name%> </p>
+	    <p> Description:</br> <%= f.text_area :description%> </p>
+	    <%= f.hidden_field :user_id, value: @current_user.id%>	
+	    <%= f.submit 'Create'%>
+	  <% end %>
+	  <% if @task.errors.any? %>
+	  <span class="Signup_Errors">
+		    <% for message_error in @user.errors.full_messages %>
+		    <label>*<%= message_error %></label>
+		    <% end %>
+	    </span>
+	  <% end %>
+</div>

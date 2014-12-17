@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  holiday_date: 
+  holiday_name: 
+  holiday_type: MyString
+
+two:
+  holiday_date: 
+  holiday_name: 
+  holiday_type: MyString

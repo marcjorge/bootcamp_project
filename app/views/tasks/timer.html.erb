@@ -1,0 +1,12 @@
+<script type="text/javascript" src="http://jchavannes.com/include/scripts/3p/jquery.timer.js"></script>
+<script type="text/javascript" src="http://jchavannes.com/include/scripts/timer-demo.js"></script>
+<div align="center">
+	<br><h1><span id="stopwatch">00:00:00</span></h1>
+	<p>
+	   </br></br>
+	    <%= button_tag link_to ('End'), projects_path %>
+		<% form_tag timer_path do %>
+			<%= submit_tag('End')%>
+		<% end %>
+	</p>
+</div>

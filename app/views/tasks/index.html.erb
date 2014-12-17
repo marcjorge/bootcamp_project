@@ -1,0 +1,33 @@
+<div class="show_project" align="center">
+	<h1>Project Name: <%= @project.name %></h1>
+	<b>Description:</b>  <%= @project.description %><br>
+	<b>Project Owner:</b><%= @project.user.first_name %> <%= @project.user.last_name %><br>
+	<b>Deadline:</b> <%= @project.deadline.strftime("%b %d %Y") %>
+	<table>
+		<thead>
+			<th>Tasks</th>
+			<th>Desciption</th>
+			<th>Action</th>
+			<th></th>
+		</thead>
+		<tbody>
+			<% @project.tasks.each do |task| %>
+				<tr>
+					<td><%= link_to task.name, project_task_path(@project.id, task.id)%></td>
+					<td><%= task.description %></td>
+					<% if task.user.admin == @current_user.admin || @current_user.admin%>
+							<td><%= link_to 'EDIT', edit_project_task_path(@project.id, task.id)%></td>
+							<td><%= link_to 'DELETE', project_task_path(@project.id, task.id), method: :delete, data: { confirm: 'Are you sure?' }%> </td>
+						<% else %>
+							<td><%= 'EDIT' %></td>
+							<td><%= 'DELETE' %></td>
+					<% end %>				
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+
+
+	<%=  link_to 'Create Task', new_project_task_path(@project.id), class: "sample" %>
+
+</div>

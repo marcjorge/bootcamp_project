@@ -1,0 +1,447 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the top of the
+* compiled file, but it's generally better to create a new file per style scope.
+*
+*= require_self
+*= require_tree .
+*/
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  font-family: sans-serif;
+  font-size: 15px;
+}
+.Sign_Form{
+  text-align: center;
+  margin:auto;
+  margin-top:10px;	
+  width:600px;
+  background-color: white;
+  padding-bottom:20px;
+  padding-top:2px;
+  border-radius: 5px;
+  box-shadow: 1px 3px 3px 3px grey;
+}
+
+.Sign_Form{
+  max-width: 500px;
+  padding: 20px 12px 10px 20px;
+  font: 13px Arial, Helvetica, sans-serif;
+}
+
+.Signup_Errors{
+  list-style-type: none;
+  margin-left:500px;
+  color:red;
+  text-align: left;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+.Sign_Form label{
+  display: block;
+  margin: 0px 0px 15px 0px;
+}
+.Sign_Form label > span{
+  width: 100px;
+  font-weight: bold;
+  float: left;
+  padding-top: 8px;
+  padding-right: 5px;
+}
+
+.Sign_Form input#username_or_email{
+  width: 48%;    
+}
+
+.Sign_Form input#login_password{
+  width: 48%;    
+}
+
+.Sign_Form input#user_first_name{
+  width: 48%;    
+}
+
+.Sign_Form input#user_last_name{
+  width: 48%;
+  
+}
+
+.Sign_Form input#user_email{
+  width: 48%;
+  
+}
+
+.Sign_Form input#user_username{
+  width: 48%;
+  
+}
+
+.Sign_Form input#user_password{
+  width: 48%;
+  
+}
+
+.Sign_Form input#user_password_confirmation{
+  width: 48%;
+}
+
+.Sign_Form input#user_old_password{
+  width: 48%;
+}
+
+.Sign_Form input{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border: 1px solid #C2C2C2;
+  box-shadow: 1px 1px 4px #EBEBEB;
+  -moz-box-shadow: 1px 1px 4px #EBEBEB;
+  -webkit-box-shadow: 1px 1px 4px #EBEBEB;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  padding: 7px;
+  outline: none;
+}
+.Sign_Form input:focus{
+  border: 1px solid #0C0;
+}
+.Sign_Form [type=submit],
+.Sign_Form [type=button]{
+  border: none;
+  padding: 8px 15px 8px 15px;
+  background: #4169E1;
+  color: #fff;
+  box-shadow: 1px 1px 4px #DADADA;
+  -moz-box-shadow: 1px 1px 4px #DADADA;
+  -webkit-box-shadow: 1px 1px 4px #DADADA;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+}
+.Sign_Form [type=submit]:hover,
+.Sign_Form [type=button]:hover{
+  background: blue;
+  color: #fff;
+}
+
+a{
+  text-decoration: none;
+  color: blue;
+} 
+
+.notice, .valid_notice, .invalid_notice{
+height:35px;
+width: 400px;
+margin:auto;
+margin-top:20px;
+}
+.notice, .invalid_notice p, .valid_notice p{
+text-align:center;
+margin-top:6px;
+}
+
+.notice{
+background-color: transparent;
+}
+
+.invalid_notice{
+background-color: #FFCCCC;
+border:1px solid red;
+}
+.valid_notice{
+background-color: #CCFFCC;
+border:1px solid green;
+}
+
+.Main_Header{
+  background-image: url('header_bg.png');
+  height:60px;
+  margin-top: 0px;
+}
+
+.Main_Header ul li a {
+  display: block;
+  padding: 23px;
+  color: #888;
+  font-size: 12px;
+}
+
+.Main_Header ul li a:hover, .Main_Header ul li a:hover{
+  background: #444;
+  color: #fff;
+}
+
+
+.Main_header, li {
+  float: right;
+  padding-left: 0px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  float: right;
+}
+
+.footer ul{
+  color: #D0D0D0;
+}
+
+.footer li{
+  margin-top: 20px;
+  margin-right: 7px;
+}
+
+.first
+{
+  color: white;
+  font-size: 18px;
+}
+
+.footer{
+  background-image: url('header_bg.png');
+  height:60px;
+  margin-top: 250px;  
+}
+
+table a:link {
+  color: #666;
+  font-weight: bold;
+  text-decoration:none;
+}
+table a:visited {
+  color: #999999;
+  font-weight:bold;
+  text-decoration:none;
+}
+table a:active,
+table a:hover {
+  color: #bd5a35;
+  text-decoration:underline;
+}
+table {
+  font-family:Arial, Helvetica, sans-serif;
+  color:#666;
+  font-size:14px;
+  text-shadow: 1px 1px 0px #fff;
+  background:#eaebec;
+  margin:20px;
+  border:#ccc 1px solid;
+
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px;
+
+  -moz-box-shadow: 0 1px 2px #d1d1d1;
+  -webkit-box-shadow: 0 1px 2px #d1d1d1;
+  box-shadow: 0 1px 2px #d1d1d1;
+}
+table th {
+  padding:21px 25px 22px 25px;
+  border-top:1px solid #fafafa;
+  border-bottom:1px solid #e0e0e0;
+
+  background: #ededed;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
+  background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
+}
+table th:first-child {
+  text-align: left;
+  padding-left:20px;
+}
+table tr:first-child th:first-child {
+  -moz-border-radius-topleft:3px;
+  -webkit-border-top-left-radius:3px;
+  border-top-left-radius:3px;
+}
+table tr:first-child th:last-child {
+  -moz-border-radius-topright:3px;
+  -webkit-border-top-right-radius:3px;
+  border-top-right-radius:3px;
+}
+table tr {
+  text-align: center;
+  padding-left:20px;
+}
+table td:first-child {
+  text-align: left;
+  padding-left:20px;
+  border-left: 0;
+}
+table td {
+  padding:18px;
+  border-top: 1px solid #ffffff;
+  border-bottom:1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+
+  background: #fafafa;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
+  background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
+}
+table tr.even td {
+  background: #f6f6f6;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f6f6f6));
+  background: -moz-linear-gradient(top,  #f8f8f8,  #f6f6f6);
+}
+table tr:last-child td {
+  border-bottom:0;
+}
+table tr:last-child td:first-child {
+  -moz-border-radius-bottomleft:3px;
+  -webkit-border-bottom-left-radius:3px;
+  border-bottom-left-radius:3px;
+}
+table tr:last-child td:last-child {
+  -moz-border-radius-bottomright:3px;
+  -webkit-border-bottom-right-radius:3px;
+  border-bottom-right-radius:3px;
+}
+table tr:hover td {
+  background: #f2f2f2;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
+  background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);  
+}
+
+#clockbox{
+  float:right;
+}
+#calendar
+{
+  width: 900px;
+  margin: 0 auto;
+}
+
+.sample [type=submit],
+.sample [type=button]{
+  border: none;
+  padding: 8px 15px 8px 15px;
+  background: #4169E1;
+  color: #fff;
+  box-shadow: 1px 1px 4px #DADADA;
+  -moz-box-shadow: 1px 1px 4px #DADADA;
+  -webkit-box-shadow: 1px 1px 4px #DADADA;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+   margin-left: 840px;
+}
+.sample [type=submit]:hover,
+.sample [type=button]:hover{
+  background: blue;
+  color: #fff;
+}
+
+.edit a{
+  padding: 0;
+  background: none;
+}
+
+#calendar table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#calendar td,
+#calendar th {
+  font-family: "Lucida Grande",arial,helvetica,sans-serif;
+  font-size: 10px;
+  padding: 6px;
+  border: 1px solid #999;
+}
+
+#calendar th {
+  background: #DDD;
+  color: #666;
+  text-align: center;
+  width: 14.2857142857143%;
+}
+
+#calendar td {
+  background: #FFF;
+  color: #777;
+  height: 80px;
+  vertical-align: top;
+  font-size: 16px;
+}
+
+#calendar .notmonth {
+  color: #CCC;
+}
+
+#calendar #month {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+#calendar #month a, #calendar #month a:hover {
+  text-decoration: none;
+  padding: 0 10px;
+  color: #999;
+}
+
+#calendar .today {
+  background-color: #D7F2FF;
+}
+
+#calendar ul {
+  margin: 0;
+  margin-top: 5px;
+  padding: 0;
+  list-style: none;
+}
+
+#calendar li {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  text-align: center;
+}
+
+#calendar .holiday li{
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  text-align: center;
+  margin-top: 50px;
+}
+.time_in{
+  background-color: #0066FF;
+  color: rgba(45, 35, 35, 0);
+}
+
+.show_project{
+}
+
+.show_user{
+  margin-left: 200px;
+}
+
+.name{
+  margin-left: 10px;
+}
+
+.show_task{
+  margin-left: 300px;
+  margin-top: 80px;
+}
+span#stopwatch {
+font-size: 100px;
+}

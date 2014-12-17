@@ -1,0 +1,11 @@
+	<div class="Sign_Form">
+	  <h1>Change Password</h1>
+	  <hr>
+	  Username: <%= @current_user.username %>
+	  <%= form_for @current_user , url: pass_reset_path do |f| %>
+	    <p> Old Password</br><%= f.password_field :old_password%> </p>
+	    <p> New Password </br><%= f.password_field :password%> </p>
+	    <p> Password  Confirmation </br><%= f.password_field :password_confirmation%> </p>
+	    <%= f.submit ('Update Password')%>
+	    <% end %>
+	</div>

@@ -1,0 +1,24 @@
+<div class="show_project">
+	<h1>Project Name: <%= @project.name %></h1>
+	<h2>Description: <%= @project.description %></h2>
+	<h2>Project Owner: <%= @project.owner %></h2>
+	<h2>Deadling: <%= @project.deadline.strftime("%b %d %Y") %></h2>
+	<table>
+		<thead>
+			<th>Task</th>
+			<th>Action</th>
+		</thead>
+		<tbody>
+			<% @tasks.each do |task| %>
+			<tr>
+				<td><%= task.name %></td>
+				<td><%= link_to 'EDIT'%></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+
+
+	<%=  link_to 'Create Task', new_project_task_path(@project.id), class: "sample" %>
+
+</div>

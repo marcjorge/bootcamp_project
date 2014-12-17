@@ -1,0 +1,9 @@
+<div class="Sign_Form">
+	<h1>Edit task</h1>
+	<hr>
+	  <%= form_for([@project_edit, @task_edit]) do |f| %>
+	  	<p> Project:</br> <%= f.text_field :name%> </p>
+	    <p> Description:</br> <%= f.text_area :description%> </p>
+	    <%= f.submit%>
+	  <% end %>
+</div>

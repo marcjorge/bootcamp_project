@@ -1,0 +1,33 @@
+<div id="calendar">
+   <div class="sample">
+    <%= form_tag ('time_in')  do %>
+     <%=  submit_tag('Time In') %>
+    <% end %>
+  </div>
+  <h1 id="month">
+    <%= link_to "<", month: (@date.beginning_of_month-1).strftime("%Y-%m-%d") %>
+    <%=h @date.strftime("%B %Y") %>
+    <%= link_to ">" , month: (@date.end_of_month+1).strftime("%Y-%m-%d") %>
+  </h1>
+  <% @holidays %>
+  <%= calendar_for @user_records, @holidays, year: @date.year, month: @date.month do |calendar| %>
+    <%= calendar.head( 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday')%>
+      <%= calendar.day(day_method: :created_at) do |date, records, holidays| %>
+        <%= date.day %> <br>
+          <ul class="time_in">
+            <% records.each do  |record| %>
+              <li><%= record.time_in %></li>
+              <li><%= record.time_out %></li>
+            <% end %>
+          </ul>
+          <ul class="holiday">
+            <% @holidays.each do  |holiday| %>
+              <% if holiday.holiday_date.to_s == date.to_s %>
+                <li><%= holiday.holiday_name %></li>
+              <% end %>
+            <% end %>
+          </ul>
+    <% end %>
+  <% end %>
+</div>  
+

@@ -1,0 +1,29 @@
+<% if @current_user.admin %>
+	<div class="show_user">
+		<h1> <%= @user.first_name%> <%= @user.last_name%> </h1>
+		<p><b>Email:</b> <%= @user.email%> </p>
+		<p><b>Position:</b> <% if @user.admin? %>
+			Manager
+			<%else%>
+			User
+			<% end %>
+		 </p>
+		 <%= link_to 'Back', users_path%> | <%= link_to 'Edit', edit_user_path(@user)%>
+		 <br>
+		 <p><b> User Logs </b></p>
+		 <table class="logs">
+			 <th></th>
+			 <th>Time in</th>
+			 <th>Time out</th> 
+		 <% @calendars.each do |calendar| %>
+		 <tr>
+			<td><%= calendar.created_at.strftime("%a, %b %d %Y") %> </td>
+			<td><%= calendar.time_in %> </td>
+			<td><%= calendar.time_out %></td>
+		 	</tr>
+		 	<% end %>
+		 </table>
+	</div>
+	<% else %>	
+	<center>You don't have permission</center>
+<% end %>

@@ -1,0 +1,18 @@
+
+<div class="show_task">
+	<b>Task:</b> <%= @task_edit.name%> <br>
+	<b>Description</b> <%= @task_edit.description%> <br>
+	<% if @task_edit.started.present? && @task_edit.ended.present?%>
+		<b>Time Started: </b><%=@task_edit.started.strftime("%I:%M:%S %p") %> <br>
+		<b>Time Ended: </b> <%=@task_edit.ended.strftime("%I:%M:%S %p")%> <br><br>
+	<% end %>
+	<%= link_to 'back', project_tasks_path %> | <%= link_to 'edit', edit_project_task_path( @project.id, @task) %>
+
+	</br>
+	</br>
+	</br>
+		<%= button_tag link_to ('Start'), timer_path %>
+		<% form_tag timer_path do %>
+			<%= submit_tag('Start')%>
+		<% end %>
+	</div>

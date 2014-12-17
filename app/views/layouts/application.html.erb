@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Project</title>
+
+	<%= javascript_include_tag "jquery.js" %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true%>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="Main_Header">
+		<%=image_tag("logo.png", alt: "Example Image", width: 50, height: 59) %>
+		<%unless session[:user_id]%>
+			<ul class="nav">
+				<li><%= link_to :SIGNUP , :signup, class: "nav_links"%></li>
+				<li><%= link_to :LOGIN , :login, class: "nav_links"%></li>	
+			</ul>
+		<%else%>
+
+				<ul class="nav">
+					<li><%= link_to :LOGOUT , :logout, class: "nav_links" %></li>
+					<li><%= link_to :PROJECT , projects_path , class: "nav_links" %></li>	
+				<% if @current_user.admin %> 
+					<li><%= link_to :USERS , users_path , class: "nav_links" %></li>
+				<% end %>
+					<li><%= link_to :DASHBOARD , calendars_path , class: "nav_links" %></li>
+				</ul>
+			<br>
+			<label class="name"><%= @current_user.first_name%> <%= @current_user.last_name%>, <%=link_to 'Change Password', edit_pass_path%></label>
+		<% end %>
+	</div>
+	<div id="clockbox"></div>
+	<% if flash[:color]== "valid" %>
+		<div class="valid_notice">
+			<p><%= flash[:notice]%></p>
+		</div>
+	<% elsif flash[:color]== "invalid"%>
+		<div class="invalid_notice">
+			<p><%=flash[:notice]%></p>
+		</div>
+	<%else%>
+		<div class="notice">
+			<p><%=flash[:notice]%></p>
+		</div>
+	<%end%>
+<%= yield %>
+
+<div class="footer">
+	<ul class="nav">
+		<li></li>
+		<li>© 2014 BootCamp |<%=image_tag("logo.png", alt: "Example Image", width: 20, height: 15)%> inDinero </li>	
+	</ul>
+</div>
+	
+</body>
+</html>

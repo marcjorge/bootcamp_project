@@ -1,0 +1,46 @@
+<head>
+	<title>Projects</title>
+</head>
+<div class="projects" align="center">
+<h1> Projects </h1>	
+	<table>
+		<thead>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Owner</th>
+			<th>Group</th>
+			<th>Deadline</th>
+			<% if @current_user.admin %>
+				<th>Action</th>
+				<th></th>
+			<% else %>
+			<% end %>
+		</thead>
+		<tbody>
+			<% @projects.each do |project| %>
+			<tr>
+				<% if  project.project_groups.detect{|x| x.user_id == @current_user.id || @current_user.admin} %>
+					<td><%= link_to project.name, project_tasks_path(project) %></td>
+				<% else %>
+					<td><%= project.name %></td>
+				<% end %>
+				<td><%= project.description %></td>
+				<td><%= project.user.first_name%> <%= project.user.last_name %></td>
+				<td><% project.project_groups.each do |a|%>
+				<%= a.user.first_name %> <%= a.user.last_name%><br>
+				<% end %></td>
+				<td><%= project.deadline.strftime("%b %d %Y") %></td>
+				<% if @current_user.admin %>
+					<td><%= link_to 'EDIT', edit_project_path(project) %> </td>
+					<td><%= link_to 'DELETE', project, method: :delete, data: { confirm: 'Are you sure?' }%> </td>
+				<% else %>
+				<% end %>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+
+	<% if @current_user.admin %><%=  link_to 'Create Project', new_project_path, class: "sample" %>
+	<% else %>
+	<% end %>
+</div>
