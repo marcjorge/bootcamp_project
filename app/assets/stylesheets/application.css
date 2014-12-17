@@ -168,7 +168,7 @@ border:1px solid green;
 }
 
 .Main_Header{
-  background-image: url('header_bg.png');
+  background-color: #181818; 
   height:60px;
   margin-top: 0px;
 }
@@ -215,7 +215,7 @@ ul {
 }
 
 .footer{
-  background-image: url('header_bg.png');
+  background-color: #181818; 
   height:60px;
   margin-top: 250px;  
 }

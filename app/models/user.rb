@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 	after_save	:clear_password
 
 	EMAIL_REGEX = /\A^[a-zA-Z\d]+[@][a-zA-Z\d]+[.][a-zA-Z\d]{3}$\z/
-	validates :first_name, presence: true, format: { with:/([A-Z][a-z]*)([\\s\\\'-][A-Z][a-z]*)*/,
+	validates :first_name, presence: true, format: { with:/\A[a-zA-Z]+\z/,
    				message: "only allows letters" }
 	validates :last_name, presence: true, format: { with: /\A[a-zA-Z]+\z/,
     			message: "only allows letters" }
