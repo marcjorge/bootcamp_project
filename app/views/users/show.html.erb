@@ -20,6 +20,7 @@
 			<td><%= calendar.created_at.strftime("%a, %b %d %Y") %> </td>
 			<td><%= calendar.time_in %> </td>
 			<td><%= calendar.time_out %></td>
+			<td><%= number_with_precision(((calendar.time_out.to_time - calendar.time_in.to_time) / 3600), :precision => 2) %> hr/s</td>
 		 	</tr>
 		 	<% end %>
 		 </table>
